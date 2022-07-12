@@ -1,5 +1,5 @@
 loginfetch = () => {
-    fetch('http://10.156.147.161:8080/', {
+    fetch('http://10.156.147.161:8080/todolist/login', {
         method: 'POST',
         body: JSON.stringify({
             uid: this.state.account_id,
@@ -15,3 +15,23 @@ loginfetch = () => {
         }
     });
 };
+
+$.ajax({
+    url:"/HTML/main.html",
+    type:'POST',
+    dataType:'json',
+    data:JSON.stringify(sendObject),
+    contentType: 'text/html;charset=UTF-8',
+    mimeType: 'application/json',
+    success:function(data) {
+        if(data.MESSAGE) {
+            alert("로그인성공");
+            window.location.href = "main.html";
+        } else {
+            alert("로그인실패");
+        }
+    },
+    error:function(data,status,er) {
+        alert("error: "+data+" status: "+status+" er:"+er);
+    }
+});
