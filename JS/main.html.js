@@ -20,12 +20,7 @@ loaditems().then((items) => {
     displayitems(items);
 })
 
-
-
-
-
-let inputvalue = document.getElementsByClassName('input')[0];
-        const onClickFunction = () => {
-            console.log("asd")
-            console.log(inputvalue.value)
-        }
+/*
+"title": 1바이트 이상 20바이트 이하 제목
+"content": 1바이트 이상 100바이트 이하 내용
+*/
